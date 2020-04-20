@@ -42,7 +42,7 @@ const results = duplicates(names, 'name').single()
 #### => all()
 Returns the entire list of duplicate objects on the property provided
 <pre lang="highlight">
-const results = duplicates(names, 'name').single()
+const results = duplicates(names, 'name').all()
 // => [{ 'age': 36, 'name': 'Bob' }, { 'age': 1,  'name': 'Bob' }]
 </pre>
 
