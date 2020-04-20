@@ -1,6 +1,6 @@
 {
   "name": "find-array-duplicates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple array utility to find duplicates in your object array 😍",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,15 @@
     "js",
     "javascript",
     "array",
+    "duplicates",
     "find duplicates",
-    "object"
+    "find array duplicates",
+    "find object duplicates",
+    "object",
+    "react",
+    "webpack",
+    "es6",
+    "es 2015"
   ],
   "author": "Sebastian Naicker <djinnwheeler@gmail.com>",
   "license": "MIT",

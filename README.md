@@ -19,7 +19,7 @@ yarn add find-array-duplicates
 `duplicates` takes in 2 arguments `arr` and `property`. `arr {Array}` should be an Array containing a list of objects of a similar structure.
 `property {String}` is the property within the object structure that you would like to check for duplicate values.
 <pre lang="highlight">
-import duplicates from 'find-array-duplicated'
+import duplicates from 'find-array-duplicates'
 
 duplicates(arr, 'property')
 
