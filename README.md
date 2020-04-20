@@ -16,10 +16,14 @@ yarn add find-array-duplicates
 </pre>
 
 ### Usage
-`duplicates` takes in 2 arguments `arr` and `property`. `arr {Array}` should be an Array containing a list of object of similar type.
-`property {String}` is the property of which value is to be checked for duplications.
+`duplicates` takes in 2 arguments `arr` and `property`. `arr {Array}` should be an Array containing a list of objects of a similar structure.
+`property {String}` is the property within the object structure that you would like to check for duplicate values.
 <pre lang="highlight">
-import duplicates from 'find-array-duplicated' 
+import duplicates from 'find-array-duplicated'
+
+duplicates(arr, 'property')
+
+// => { single, all, modify, map, filter, find }
 </pre>
 
 #### => single()
