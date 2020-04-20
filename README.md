@@ -16,6 +16,8 @@ yarn add find-array-duplicates
 </pre>
 
 ### Usage
+`duplicates` takes in 2 arguments `arr` and `property`. `arr {Array}` should be an Array containing a list of object of similar type.
+`property {String}` is the property of which value is to be checked for duplications.
 <pre lang="highlight">
 import duplicates from 'find-array-duplicated' 
 </pre>
