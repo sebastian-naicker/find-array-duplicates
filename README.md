@@ -1,74 +1,71 @@
-# eslint-config-essentials
-The bare bones, un-opinionated, essential - eslint config.
+# find-array-duplicates
+A utility function to find all duplicates within a provided object array
 
-## Philosophy
-As a developer over the years I've always hated the fact that we just followed some standard
-without knowing why or how, we just follow it because the biggest dev houses do.
-
-As I matured as a developer my overall vision for my career changed, and if there's one moral value that I stand for today
-is developer experience, and guess what? When it comes to linting, it's no different.
-
-I've decided to write this config file, as something that will be a template for you to extend on
-and add your own rules that you / team feel are required as something that you will enjoy.
-
-I don't believe in forcing my opinion on someone especially when it's a subjective matter on code style,
-and performance is not impacted. This not only stunts the other developer or everyone in your team,
-but it also makes me not enjoy developing, and the reason we're developers, is because we love what we do!
-
-With that in mind I really hope, that this could serve as a helping base template for all your linting needs :)
-
-![Downloads](https://img.shields.io/npm/dt/eslint-config-essentials)
-
-## Prerequisites
+### Prerequisites
 * **Node ^7.0** [nodejs.org](https://nodejs.org)
 
-## Peer dependencies
-1. `"eslint": ">= 3"`
-
-## Install
+### Install
 <pre lang="highlight">
-npm install eslint-config-essentials --save-dev
+npm i find-array-duplicates
 </pre>
 
 or
 
 <pre lang="highlight">
-yarn add eslint-config-essentials -D
+yarn add find-array-duplicates
 </pre>
 
-## Usage
-All you need to do is add the below prop to you eslint config file:
+### Usage
 <pre lang="highlight">
-"extends": "essentials"
+import duplicates from 'find-array-duplicated' 
 </pre>
 
-## Example .eslintrc.js
+#### => single()
+Returns the first object of the filtered duplicates array
 <pre lang="highlight">
-module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: '6',
-    sourceType: 'module'
-  },
-  extends: 'essentials',
-};
+const names = [
+  { 'age': 36, 'name': 'Bob' },
+  { 'age': 40, 'name': 'Harry' },
+  { 'age': 1,  'name': 'Bob' }
+]
+
+const results = duplicates(names, 'name').single()
+// => [{ 'age': 36, 'name': 'Bob' }]
 </pre>
 
-## Example .eslintrc.json file
+#### => all()
+Returns the entire list of duplicate objects on the property provided
 <pre lang="highlight">
-{
-  root: true,
-  extends: 'essentials'
-}
+const results = duplicates(names, 'name').single()
+// => [{ 'age': 36, 'name': 'Bob' }, { 'age': 1,  'name': 'Bob' }]
 </pre>
 
-## Extending rules
+#### => modify(callback)
+Allows you to modify the output of the final result, the call back function is provided with the entire list of duplicate objects 
 <pre lang="highlight">
-{
-  "root": true,
-  "extends": "essentials",
-  rules: {
-    "semi": [1, "always"]
-  } 
-}
+const results = duplicates(names, 'name').modify(dupes => dupes.age)
+// => [{ 'age': 36 }, { 'age': 1 }]
 </pre>
+
+#### => find(callback)
+Works exactly like `Array.find` runs off the duplicate array
+<pre lang="highlight">
+const results = duplicates(names, 'name').find(dupes => dupes.age === 1)
+// => { 'age': 1,  'name': 'Bob' }
+</pre>
+
+#### => map(callback)
+Works exactly like `Array.map` runs off the duplicate array
+<pre lang="highlight">
+const results = duplicates(names, 'name').map(({ name, age }, index) => { name, age, index })
+// => [{ 'age': 1,  'name': 'Bob', index: 0 }, { 'age': 36, 'name': 'Bob', index: 1 }]
+</pre>
+
+#### => filter(callback)
+Works exactly like `Array.filter` runs off the duplicate array
+<pre lang="highlight">
+const results = duplicates(names, 'name').filter(dupes => dupes.age >= 1)
+// => [{ 'age': 1,  'name': 'Bob' }, { 'age': 36, 'name': 'Bob' }]
+</pre>
+
+Please report issues on the github issue page. Hope you enjoy!
