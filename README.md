@@ -1,6 +1,9 @@
 # find-array-duplicates
 A utility function to find all duplicates within a provided object array
 
+### Information
+![Node.js CI](https://github.com/sebastian-naicker/find-array-duplicates/workflows/Node.js%20CI/badge.svg)
+
 ### Prerequisites
 **Node ^12.x** [nodejs.org](https://nodejs.org)
 
