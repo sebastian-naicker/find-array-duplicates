@@ -2,7 +2,7 @@
 A utility function to find all duplicates within a provided object array
 
 ### Prerequisites
-* **Node ^7.0** [nodejs.org](https://nodejs.org)
+**Node ^12.x** [nodejs.org](https://nodejs.org)
 
 ### Install
 <pre lang="highlight">
