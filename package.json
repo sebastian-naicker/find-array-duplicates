@@ -1,11 +1,11 @@
 {
   "name": "find-array-duplicates",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A simple array utility to find duplicates in your object array 😍",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d ./build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./tests"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,11 @@
     "js",
     "javascript",
     "array",
+    "find",
+    "array",
     "duplicates",
-    "find duplicates",
-    "find array duplicates",
-    "find object duplicates",
+    "array duplicates",
+    "object duplicates",
     "object",
     "react",
     "webpack",
@@ -32,7 +33,8 @@
     "@babel/cli": "^7.8.4",
     "@babel/preset-env": "^7.9.5",
     "babel-preset-minify": "^0.5.1",
-    "gzipper": "^3.7.0"
+    "gzipper": "^3.7.0",
+    "jest": "^25.4.0"
   },
   "bugs": {
     "url": "https://github.com/sebastian-naicker/find-array-duplicates/issues"
