@@ -47,7 +47,8 @@ const results = duplicates(names, 'name').all()
 </pre>
 
 #### `=> modify(callback)`
-Allows you to modify the output of the final result, the call back function is provided with the entire list of duplicate objects 
+Allows you to modify the output of the final result, the call back function is provided with the entire list of duplicate objects
+Returns `any` entirely in your control. 
 <pre lang="highlight">
 const results = duplicates(names, 'name').modify(dupes => dupes[0].age)
 // => 36
@@ -55,6 +56,7 @@ const results = duplicates(names, 'name').modify(dupes => dupes[0].age)
 
 #### `=> find(callback)`
 Works exactly like `Array.find` runs off the duplicate array
+Returns an `Object` based on the `find` callback provided.
 <pre lang="highlight">
 const results = duplicates(names, 'name').find(dupes => dupes.age === 1)
 // => { 'age': 1,  'name': 'Bob' }
@@ -62,13 +64,15 @@ const results = duplicates(names, 'name').find(dupes => dupes.age === 1)
 
 #### `=> map(callback)`
 Works exactly like `Array.map` runs off the duplicate array
+Returns an `Array` based on the `map` callback provided.
 <pre lang="highlight">
 const results = duplicates(names, 'name').map(({ name, age }, index) => { name, age, index })
 // => [{ 'age': 1,  'name': 'Bob', index: 0 }, { 'age': 36, 'name': 'Bob', index: 1 }]
 </pre>
 
 #### `=> filter(callback)`
-Works exactly like `Array.filter` runs off the duplicate array
+Works exactly like `Array.filter` runs off the duplicate array.
+Returns an `Array` based on the `filter` callback provided.
 <pre lang="highlight">
 const results = duplicates(names, 'name').filter(dupes => dupes.age >= 1)
 // => [{ 'age': 1,  'name': 'Bob' }, { 'age': 36, 'name': 'Bob' }]
