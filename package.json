@@ -1,6 +1,6 @@
 {
   "name": "find-array-duplicates",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple array utility to find duplicates in your object array 😍",
   "main": "index.js",
   "scripts": {
