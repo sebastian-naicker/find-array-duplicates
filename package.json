@@ -1,11 +1,11 @@
 {
   "name": "find-array-duplicates",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple array utility to find duplicates in your object array 😍",
   "main": "index.js",
   "scripts": {
     "build": "babel src -d ./build",
-    "test": "jest ./tests"
+    "test": "jest --coverage ./tests"
   },
   "repository": {
     "type": "git",
