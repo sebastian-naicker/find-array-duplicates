@@ -26,7 +26,6 @@ function duplicates(arr, property) {
     );
   if (!property) throw new Error(`The property parameter cannot be empty`);
   const clone = [...arr];
-  if (clone.length <= 1) return arr;
   if (!clone[0].hasOwnProperty(property)) throw new Error(`Could not find property [${property}] in Object Array`);
 
   const duplicates = [

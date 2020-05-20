@@ -9,6 +9,15 @@ describe(__filename, () => {
     { name: 'Bob', age: 21 }
   ]
 
+  it('=> () - should not return error if property is empty string', () => {
+    const testArr = [{name: '', age: 20, name: 'Bob', age: 32}]
+    const expected = []
+
+    const actual = duplicates(testArr, 'name').all()
+
+    expect(actual).toStrictEqual(expected)
+  })
+
   it('=> single() - should return the first element of the duplicates', () => {
     const expected = { name: 'Bob', age: 20 }
 
